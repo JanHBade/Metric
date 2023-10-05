@@ -1,0 +1,17 @@
+[Unit]
+Description=Ads Daten zur InfluxDb schreiben
+After=network.target
+BindsTo=dump1090-fa.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=idle
+Restart=always
+RestartSec=10
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/metric/
+ExecStart=/home/pi/metric/AdsbToMqtt.py
+
+[Install]
+WantedBy=multi-user.target

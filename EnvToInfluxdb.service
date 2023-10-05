@@ -1,0 +1,16 @@
+[Unit]
+Description=Env Daten zur InfluxDb schreiben
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=idle
+Restart=always
+RestartSec=10
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/metric/
+ExecStart=/home/pi/metric/EnvToMqtt.py
+
+[Install]
+WantedBy=multi-user.target
