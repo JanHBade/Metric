@@ -23,7 +23,8 @@ if __name__ == '__main__':
 		client.reconnect()
 
 		data = {}
-		data["Zaehler"]=Zaehler + 1
+		data["Zaehler"]= Zaehler = Zaehler + 1
+		data["WlanSignal"]=0 #verbunden per kabel
 		data["Temperatur"]=bme280.temperature
 		data["Druck"]=bme280.pressure
 		data["Feuchte"]=bme280.humidity
