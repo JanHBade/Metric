@@ -28,8 +28,8 @@ def aircraft():
             messages = 0
 
         newjson = {}
-        newjson["count"] = aircraft
-        newjson["messages"] = messages
+        newjson["Planes"] = aircraft
+        newjson["Messages"] = messages
         try:
             client.publish("SPS/Aircraft",json.dumps(newjson))
         except:
@@ -56,8 +56,8 @@ def stats():
             noise = 0
 
         newjson = {}
-        newjson["signal"] = signal
-        newjson["noise"] = noise
+        newjson["Signal"] = signal
+        newjson["Noise"] = noise
         try:
             client.publish("SPS/Aircraft/Stats",json.dumps(newjson))
         except:
