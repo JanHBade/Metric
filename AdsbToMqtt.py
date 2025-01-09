@@ -28,10 +28,10 @@ def aircraft():
             messages = 0
 
         newjson = {}
-        newjson["aircraft"] = aircraft
+        newjson["count"] = aircraft
         newjson["messages"] = messages
         try:
-            client.publish("adsb/Wosret/aircraft",json.dumps(newjson))
+            client.publish("SPS/Aircraft",json.dumps(newjson))
         except:
             print("Error: pub air")
 
@@ -59,7 +59,7 @@ def stats():
         newjson["signal"] = signal
         newjson["noise"] = noise
         try:
-            client.publish("adsb/Wosret/stats",json.dumps(newjson))
+            client.publish("SPS/Aircraft/Stats",json.dumps(newjson))
         except:
             print("Error: pub Stats")
 
